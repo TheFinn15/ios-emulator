@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "SF PRO Regular";
+  src: url("../fonts/SFPRODISPLAYREGULAR.OTF");
+}
+@font-face {
+  font-family: "SF Pro Thin";
+  src: url("../fonts/SFProDisplay-Thin.ttf");
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #000 !important;
+}
+
+/*# sourceMappingURL=index.css.map */
