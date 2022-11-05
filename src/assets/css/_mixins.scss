@@ -1,3 +1,5 @@
+@import "variables";
+
 @mixin phone-btn-container($width: 2.5px, $height: 50px, $offsetY: 170px, $offsetX: 100%) {
   cursor: pointer;
   content: '';
@@ -8,3 +10,36 @@
   height: $height;
   background-color: lightgray;
 }
+
+@mixin build-action-icon($img) {
+  border-radius: 50%;
+  cursor: pointer;
+  padding: $spacer * 1.4;
+  background-color: rgba(95, 95, 95, 0.55);
+  background-image: url($img);
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:active {
+    //animation: clickIcons .5s ease-in;
+    transition: .5s all ease-out;
+    background-color: rgba(95, 95, 95, 0.8);
+    padding: $spacer * 1.6;
+  }
+}
+
+@mixin build-icon($icon, $width: 24px, $height: 24px) {
+  width: $width;
+  height: $height;
+  background: url('../../assets/icons/#{$icon}') no-repeat center center;
+}
+
+//@keyframes clickIcons {
+//  100% {
+//    padding: $spacer * 1.5;
+//  }
+//
+//  0% {
+//    padding: $spacer * 1.4;
+//  }
+//}

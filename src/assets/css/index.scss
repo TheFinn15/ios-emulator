@@ -10,5 +10,20 @@
 body, html {
   margin: 0;
   padding: 0;
-  background-color: #000 !important;
+}
+
+.life-text {
+  overflow-x: auto;
+  white-space: nowrap;
+  animation: 5s life-text infinite linear;
+}
+
+@keyframes life-text {
+  0% {
+    text-indent: 100%;
+  }
+
+  100% {
+    text-indent: -150%;
+  }
 }

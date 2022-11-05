@@ -3,24 +3,24 @@
 
 .phone-container {
   position: relative;
-  width: 360px;
+  width: 380px;
   height: 750px;
-  border: 0.5px solid lightgray;
-  border-radius: 40px;
+  border: 0.5px solid #000;
+  border-radius: $default-radius;
   margin: $spacer * 4 auto;
   padding: $spacer;
 
   &__notch:after {
     content: '';
     position: absolute;
-    left: 30%;
+    left: 30.5%;
     width: 150px;
     height: 25px;
     background-color: #000;
     //border: .5px solid lightgray;
     border-top: none;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: $default-radius;
+    border-bottom-right-radius: $default-radius;
     z-index: 9999;
   }
 
@@ -42,7 +42,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    border-radius: 40px;
+    border-radius: $default-radius;
+    //border: .5px solid lightgray;
     z-index: -1000;
   }
 }
@@ -52,18 +53,108 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-top: $spacer * 2.5;
+  padding-top: $spacer;
   color: #fff;
 
   &__blocked {
-    background: url("../icons/lock-filled.svg") no-repeat;
+    background: url("../img/lock-filled.svg") no-repeat;
     width: 48px;
     height: 48px;
+  }
+
+  &__date {
+    font-family: "SF Pro Thin", sans-serif;
+    font-size: 16pt;
   }
 
   &__time {
     font-size: 48pt;
     font-family: "SF Pro Thin", sans-serif;
-    font-weight: 600;
+    font-weight: 500;
+  }
+
+  &__bottom {
+    display: flex;
+    width: 95%;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: $spacer * 4;
+    margin-top: $spacer * 3;
+
+    &-swipe {
+      font-size: 8pt;
+      font-family: "SF PRO Regular", sans-serif;
+      margin-top: $spacer * 1.5;
+      animation: 5s swipe-up infinite ease-in-out;
+
+      & div {
+        margin-top: $spacer * .5;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 20px;
+      }
+
+      @keyframes swipe-up {
+        0% {
+          transform: translateY(0);
+        }
+        20% {
+          transform: translateY(-35%);
+        }
+        50%, 100% {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &-icon {
+      &-flashlight {
+        @include mixins.build-action-icon("../../assets/icons/flashlight-off.svg");
+      }
+
+      &-camera {
+        @include mixins.build-action-icon("../../assets/icons/camera.svg");
+      }
+    }
+  }
+}
+
+.notification-container {
+  margin-top: $spacer * 2;
+  width: 95%;
+  max-height: 360px;
+  overflow-y: auto;
+
+  &__item {
+    background-color: rgba(95, 95, 95, 0.55);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    width: 100%;
+    margin-top: $spacer * .5;
+    padding: $spacer * .5;
+    display: flex;
+    align-items: center;
+    gap: $spacer * .5;
+
+    &-icon img {
+      border-radius: 6px;
+    }
+
+    &-title {
+      font-size: 8pt;
+      font-weight: 600;
+    }
+
+    &-subtitle {
+      font-size: 8pt;
+      font-weight: 250;
+    }
+
+    &-time {
+      color: rgb(190, 190, 190);
+      font-size: 8pt;
+      text-align: end;
+    }
   }
 }

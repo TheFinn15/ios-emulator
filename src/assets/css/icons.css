@@ -1,0 +1,27 @@
+.icon__battery {
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/icons/battery-75.svg") no-repeat center center;
+}
+.icon__wifi-off {
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/icons/wifi-off.svg") no-repeat center center;
+}
+.icon__mobile-network-on {
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/icons/mobile-network-on.svg") no-repeat center center;
+}
+.icon__camera {
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/icons/camera.svg") no-repeat center center;
+}
+.icon__torch-off {
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/icons/flashlight-off.svg") no-repeat center center;
+}
+
+/*# sourceMappingURL=icons.css.map */
