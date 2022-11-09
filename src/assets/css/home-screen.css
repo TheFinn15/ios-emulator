@@ -1,0 +1,189 @@
+.home-screen__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  user-select: none;
+}
+.home-screen__container-apps {
+  margin: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.home-screen__container-apps__item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+}
+.home-screen__container-apps__item img {
+  justify-content: center;
+  border-radius: 10px;
+}
+.home-screen__container-apps__item span {
+  color: #fff;
+  font-size: 8pt !important;
+  font-weight: 400;
+  font-family: "SF PRO Regular", sans-serif;
+  letter-spacing: 0.5px;
+}
+.home-screen__container-apps__item:hover::before {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.home-screen__container-apps__folder {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-screen__container-apps__folder img {
+  justify-content: center;
+  border-radius: 10px;
+}
+.home-screen__container-apps__folder span {
+  color: #fff;
+  font-size: 8pt !important;
+  font-weight: 400;
+  font-family: "SF PRO Regular", sans-serif;
+  letter-spacing: 0.5px;
+}
+.home-screen__container-apps__folder:hover::before {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.home-screen__container-apps__folder-box {
+  background-color: rgba(95, 95, 95, 0.55);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 0.35rem;
+  width: 48px;
+  height: 48px;
+}
+.home-screen__container-apps__folder-box_sub-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2px;
+  height: 100%;
+}
+.home-screen__container-apps__folder-box_sub-items img {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+.home-screen__container-apps__folder-box:hover::before {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.home-screen__container-apps__badge {
+  position: absolute;
+  top: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 14px;
+  color: #fff;
+  background-color: #f11d1d;
+  padding: 0.2rem;
+  font-size: 6pt;
+  font-family: "SF PRO Regular", sans-serif;
+}
+.home-screen__container-bottom {
+  display: inline-flex;
+  justify-content: space-around;
+  background-color: rgba(95, 95, 95, 0.55);
+  backdrop-filter: blur(10px);
+  border-radius: 40px;
+  padding: 0.5rem;
+  margin-top: 420px;
+}
+.home-screen__container-bottom__item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+}
+.home-screen__container-bottom__item img {
+  justify-content: center;
+  border-radius: 10px;
+}
+.home-screen__container-bottom__item span {
+  color: #fff;
+  font-size: 8pt !important;
+  font-weight: 400;
+  font-family: "SF PRO Regular", sans-serif;
+  letter-spacing: 0.5px;
+}
+.home-screen__container-bottom__item:hover::before {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.blur-box {
+  position: absolute;
+  top: -32px;
+  left: 0;
+  width: 100%;
+  height: 720px;
+  background-color: rgba(95, 95, 95, 0.55);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  border-radius: 40px;
+}
+.blur-box__folder {
+  display: flex;
+  flex-flow: nowrap column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.blur-box__folder span {
+  font-family: "SF PRO Regular", sans-serif;
+  font-size: 14pt;
+  color: #fff;
+  margin-bottom: 4rem;
+  cursor: pointer;
+}
+.blur-box__folder-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: rgba(55, 55, 55, 0.8);
+  border-radius: 40px;
+  padding: 2rem;
+  width: 260px;
+}
+
+/*# sourceMappingURL=home-screen.css.map */

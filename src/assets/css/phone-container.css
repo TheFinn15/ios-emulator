@@ -60,12 +60,27 @@
 }
 
 .lock-screen {
+  user-select: none;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-top: 1rem;
+  padding: 1rem 0.5rem;
   color: #fff;
+}
+.lock-screen-enter {
+  opacity: 0;
+}
+.lock-screen-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.lock-screen-exit {
+  opacity: 0;
+}
+.lock-screen-exit-active {
+  opacity: 1;
+  transition: opacity 300ms;
 }
 .lock-screen__blocked {
   background: url("../img/lock-filled.svg") no-repeat;
@@ -144,7 +159,6 @@
 
 .notification-container {
   margin-top: 2rem;
-  width: 95%;
   max-height: 360px;
   overflow-y: auto;
 }
@@ -174,6 +188,17 @@
   color: rgb(190, 190, 190);
   font-size: 8pt;
   text-align: end;
+}
+
+.blurred-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  padding: 0 0.5rem;
+  border-radius: 40px;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=phone-container.css.map */

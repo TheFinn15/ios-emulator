@@ -34,6 +34,40 @@
   background: url('../../assets/icons/#{$icon}') no-repeat center center;
 }
 
+@mixin build-app($size-on: 'on') {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @if ($size-on == 'on') {
+    width: 48px;
+    height: 48px;
+  }
+
+  & img {
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  & span {
+    color: #fff;
+    font-size: 8pt !important;
+    font-weight: 400;
+    font-family: "SF PRO Regular", sans-serif;
+    letter-spacing: .5px;
+  }
+
+  &:hover::before {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    transition: all .3s ease;
+  }
+}
+
 //@keyframes clickIcons {
 //  100% {
 //    padding: $spacer * 1.5;

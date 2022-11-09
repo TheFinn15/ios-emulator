@@ -10,6 +10,11 @@ body, html {
   margin: 0;
   padding: 0;
 }
+@media (max-width: 576px) {
+  body, html {
+    overflow: hidden;
+  }
+}
 
 .life-text {
   overflow-x: auto;

@@ -1,0 +1,131 @@
+@use "mixins";
+@import "variables";
+
+.home-screen {
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    //height: 95%;
+    padding: $spacer * .5;
+    user-select: none;
+
+    &-apps {
+      //height: 90%;
+      margin: $spacer * 1.5;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacer;
+      justify-content: space-between;
+
+      &__item {
+        @include mixins.build-app();
+      }
+      &__folder {
+        @include mixins.build-app('off');
+
+        &-box {
+          background-color: rgba(95, 95, 95, 0.55);
+          backdrop-filter: blur(10px);
+          border-radius: 10px;
+          padding: $spacer * .35;
+          width: 48px;
+          height: 48px;
+
+          &_sub-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2px;
+            height: 100%;
+
+            & img {
+              width: 10px;
+              height: 10px;
+              border-radius: 2px;
+            }
+          }
+
+          &:hover::before {
+            content: "";
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            transition: all .3s ease;
+          }
+        }
+      }
+      &__badge {
+        position: absolute;
+        top: -5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        height: 14px;
+        color: #fff;
+        background-color: #f11d1d;
+        padding: $spacer * .2;
+        font-size: 6pt;
+        font-family: "SF PRO Regular", sans-serif;
+      }
+    }
+    &-bottom {
+      display: inline-flex;
+      justify-content: space-around;
+      background-color: rgba(95, 95, 95, 0.55);
+      backdrop-filter: blur(10px);
+      border-radius: $default-radius;
+      padding: $spacer * .5;
+      margin-top: 420px;
+
+      &__item {
+        @include mixins.build-app();
+      }
+    }
+  }
+}
+
+.blur-box {
+  position: absolute;
+  top: -32px;
+  left: 0;
+  width: 100%;
+  height: 720px;
+  background-color: rgba(95, 95, 95, 0.55);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  border-radius: $default-radius;
+
+  &__folder {
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    & span {
+      font-family: "SF PRO Regular", sans-serif;
+      font-size: 14pt;
+      color: #fff;
+      margin-bottom: $spacer * 4;
+      cursor: pointer;
+    }
+    &-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacer * 1.5;
+      align-items: center;
+      background-color: rgba(55,55,55, .8);
+      //backdrop-filter: blur(10px) opacity(.5);
+      border-radius: $default-radius;
+      padding: $spacer * 2;
+      width: 260px;
+    }
+  }
+}
