@@ -30,6 +30,7 @@
   font-weight: 400;
   font-family: "SF PRO Regular", sans-serif;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 .home-screen__container-apps__item:hover::before {
   content: "";
@@ -56,6 +57,7 @@
   font-weight: 400;
   font-family: "SF PRO Regular", sans-serif;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 .home-screen__container-apps__folder:hover::before {
   content: "";
@@ -139,6 +141,7 @@
   font-weight: 400;
   font-family: "SF PRO Regular", sans-serif;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 .home-screen__container-bottom__item:hover::before {
   content: "";

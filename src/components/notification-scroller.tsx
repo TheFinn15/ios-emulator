@@ -6,62 +6,8 @@ export default function NotificationScroller() {
       title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
       content: 'Lorem',
       sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
+      icon: require('../assets/icons/mail_app.svg')
     },
-    {
-      title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
-      content: 'Lorem',
-      sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
-    },
-    {
-      title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
-      content: 'Lorem',
-      sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
-    },
-    {
-      title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
-      content: 'Lorem',
-      sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
-    },
-    {
-      title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
-      content: 'Lorem',
-      sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
-    },
-    {
-      title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
-      content: 'Lorem',
-      sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
-    },
-    {
-      title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
-      content: 'Lorem',
-      sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
-    },
-    {
-      title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
-      content: 'Lorem',
-      sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
-    },
-    {
-      title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
-      content: 'Lorem',
-      sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
-    },
-    {
-      title: 'Blockchain.com Crypto FAQ: What is a seed phrase ?',
-      content: 'Lorem',
-      sentAt: new Date(),
-      icon: require('../assets/icons/mail.svg').default
-    }
   ];
 
   return (

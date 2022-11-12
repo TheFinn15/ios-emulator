@@ -1,4 +1,4 @@
-import {HomeScreenType, IHomeContent, IHomeFolder} from '../../types';
+import {AppID, HomeScreenType, Icon, IHomeApp, IHomeContent} from '@/types';
 import {CSSProperties} from 'styled-components';
 
 interface AppItemProps {
@@ -19,6 +19,7 @@ export const AppItem = ({content: {app, widget, folder}, className, onOpenApp}: 
     };
 
     if (app) {
+      const appIcon = getAppIcon();
       return (
           <div className={`${className} position-relative`} onClick={() => onOpenApp('application', {app})}>
             {(app.badge && app.badge > 0) &&
@@ -28,7 +29,7 @@ export const AppItem = ({content: {app, widget, folder}, className, onOpenApp}: 
                 {app.badge}
               </div>
             }
-            <img src={app.icon?.src} alt={`icon_${app.id}`} width={`${app.icon?.width}px`} height={`${app.icon?.height}px`} />
+            <img src={appIcon.src} alt={`icon_${app.id}`} width={`${appIcon.width}px`} height={`${appIcon.height}px`} />
             <span>{app.name}</span>
           </div>
       );
@@ -49,7 +50,8 @@ export const AppItem = ({content: {app, widget, folder}, className, onOpenApp}: 
               }
               <div className="home-screen__container-apps__folder-box_sub-items">
                 {folder.apps.map((app, ind) => {
-                  return (<img src={app.icon?.src} alt={`icon_${app.id}`} key={ind} />);
+                  const appIcon = getAppIcon(app);
+                  return (<img src={appIcon.src} alt={`icon_${app.id}`} width={appIcon.width} height={appIcon.height} key={ind} />);
                 })}
               </div>
             </div>
@@ -60,5 +62,25 @@ export const AppItem = ({content: {app, widget, folder}, className, onOpenApp}: 
     return (
         <div>Nope</div>
     );
+  }
+
+  function getAppIcon(additional?: IHomeApp): Icon {
+    const currentApp = additional ?? app;
+    const res: Icon = {
+      src: '',
+      width: 48,
+      height: 48,
+    };
+    try {
+      if (currentApp) {
+        const rawIconName = Object.keys(AppID)[parseInt(currentApp.id)-1];
+        const iconName = `${rawIconName?.split(/(?=[A-Z])/).map(s => s.toLowerCase()).join('_')}_app.svg`;
+        res.src = rawIconName ? require(`@icons/${iconName}`) : '';
+      }
+      return res;
+    } catch (e) {
+      console.log(e);
+      return res;
+    }
   }
 };

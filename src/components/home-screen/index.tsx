@@ -1,6 +1,6 @@
 import '../../assets/css/home-screen.css';
 import {Bottom} from './bottom';
-import {BlurOption, HomeScreenType, IHomeContent, IHomeScreen} from '../../types';
+import {AppID, BlurOption, HomeScreenType, IHomeContent, IHomeScreen} from '../../types';
 import {Content} from './content';
 import {BlurContainer} from './blur-container';
 import {useState} from 'react';
@@ -9,49 +9,24 @@ export const HomeScreen = () => {
   const content: IHomeScreen = {
     bottomApps: [
       {
-        id: '1',
-        icon: {
-          src: require('../../assets/icons/call_app.svg').default,
-          width: 48,
-          height: 48
-        },
+        id: AppID.Phone,
       },
       {
-        id: '2',
-        icon: {
-          src: require('../../assets/icons/camera_app.svg').default,
-          width: 48,
-          height: 48
-        },
+        id: AppID.Camera,
       },
       {
-        id: '3',
-        icon: {
-          src: require('../../assets/icons/imessages_app.svg').default,
-          width: 48,
-          height: 48
-        },
+        id: AppID.Messages,
       },
       {
-        id: '4',
-        icon: {
-          src: require('../../assets/icons/safari_app.svg').default,
-          width: 48,
-          height: 48
-        },
+        id: AppID.Safari,
       }
     ],
     mainContent: [
       {
         app: {
-          id: '100',
-          name: 'Safari',
+          id: AppID.Settings,
+          name: 'Settings',
           badge: 10,
-          icon: {
-            width: 48,
-            height: 48,
-            src: require('../../assets/icons/safari_app.svg').default,
-          }
         }
       },
       {
@@ -60,102 +35,40 @@ export const HomeScreen = () => {
           badge: 91,
           apps: [
             {
-              id: '102',
-              name: 'Keks',
-              icon: {
-                width: 48,
-                height: 48,
-                src: require('../../assets/icons/safari_app.svg').default,
-              }
+              id: AppID.Calendar,
+              name: 'Calendar',
             },
             {
-              id: '102',
-              name: 'Keks',
-              icon: {
-                width: 48,
-                height: 48,
-                src: require('../../assets/icons/safari_app.svg').default,
-              }
+              id: AppID.Files,
+              name: 'Files',
             },
             {
-              id: '102',
-              name: 'Keks',
-              icon: {
-                width: 48,
-                height: 48,
-                src: require('../../assets/icons/safari_app.svg').default,
-              }
+              id: AppID.Clock,
+              name: 'Clock',
             },
             {
-              id: '102',
-              name: 'Keks',
-              icon: {
-                width: 48,
-                height: 48,
-                src: require('../../assets/icons/safari_app.svg').default,
-              }
-            },
-            {
-              id: '102',
-              name: 'Keks',
-              icon: {
-                width: 48,
-                height: 48,
-                src: require('../../assets/icons/safari_app.svg').default,
-              }
-            },
-            {
-              id: '102',
-              name: 'Keks',
-              icon: {
-                width: 48,
-                height: 48,
-                src: require('../../assets/icons/safari_app.svg').default,
-              }
-            },
-            {
-              id: '102',
-              name: 'Keks',
-              icon: {
-                width: 48,
-                height: 48,
-                src: require('../../assets/icons/safari_app.svg').default,
-              }
+              id: AppID.AppStore,
+              name: 'App Store',
             },
           ]
         }
       },
       {
         app: {
-          id: '100',
-          name: 'Safari',
-          icon: {
-            width: 48,
-            height: 48,
-            src: require('../../assets/icons/safari_app.svg').default,
-          }
+          id: AppID.Calculator,
+          name: 'Calculator',
         }
       },
       {
         app: {
-          id: '100',
-          name: 'Safari',
-          icon: {
-            width: 48,
-            height: 48,
-            src: require('../../assets/icons/safari_app.svg').default,
-          }
+          id: AppID.Contacts,
+          name: 'Contacts',
         }
       },
       {
         app: {
-          id: '100',
-          name: 'Safari',
-          icon: {
-            width: 48,
-            height: 48,
-            src: require('../../assets/icons/safari_app.svg').default,
-          }
+          id: AppID.Maps,
+          name: 'Maps',
         }
       },
     ]

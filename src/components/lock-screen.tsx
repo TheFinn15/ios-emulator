@@ -2,7 +2,7 @@ import NotificationScroller from './notification-scroller';
 import '../assets/css/icons.css';
 import React, {useState} from 'react';
 import {Direction, SwipeContainer, SwipePosition} from './swipe-container';
-import {DateTime} from '../types';
+import {DateTime} from 'types';
 
 interface LockScreenParams {
   onSwipe: (direction: Direction, pos: SwipePosition) => void;
