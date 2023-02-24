@@ -1,18 +1,19 @@
 @import "variables";
 
 @font-face {
-  font-family: 'SF PRO Regular';
+  font-family: "SF PRO Regular";
   src: url("../fonts/SFPRODISPLAYREGULAR.OTF");
 }
 @font-face {
-  font-family: 'SF Pro Thin';
+  font-family: "SF Pro Thin";
   src: url("../fonts/SFProDisplay-Thin.ttf");
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
-  
+
   @media (max-width: $sm) {
     overflow: hidden;
   }

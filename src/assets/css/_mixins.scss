@@ -1,8 +1,13 @@
 @import "variables";
 
-@mixin phone-btn-container($width: 2.5px, $height: 50px, $offsetY: 170px, $offsetX: 100%) {
+@mixin phone-btn-container(
+  $width: 2.5px,
+  $height: 50px,
+  $offsetY: 170px,
+  $offsetX: 100%
+) {
   cursor: pointer;
-  content: '';
+  content: "";
   position: absolute;
   top: $offsetY;
   left: $offsetX;
@@ -22,7 +27,7 @@
 
   &:active {
     //animation: clickIcons .5s ease-in;
-    transition: .5s all ease-out;
+    transition: 0.5s all ease-out;
     background-color: rgba(95, 95, 95, 0.8);
     padding: $spacer * 1.6;
   }
@@ -31,17 +36,22 @@
 @mixin build-icon($icon, $width: 24px, $height: 24px) {
   width: $width;
   height: $height;
-  background: url('../../assets/icons/#{$icon}') no-repeat center center;
+  background: url("../../assets/icons/#{$icon}") no-repeat center center;
 }
 
-@mixin build-app($size-on: 'on') {
+@mixin build-app($size-on: "on") {
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  @if ($size-on == 'on') {
+  @if ($size-on == "on") {
     width: 48px;
     height: 48px;
+  }
+
+  &:active {
+    animation: pressedApp 0.4s ease-in;
+    animation-fill-mode: forwards;
   }
 
   & img {
@@ -54,7 +64,7 @@
     font-size: 8pt !important;
     font-weight: 400;
     font-family: "SF PRO Regular", sans-serif;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     white-space: nowrap;
   }
 
@@ -63,18 +73,20 @@
     position: absolute;
     width: 48px;
     height: 48px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
 
-//@keyframes clickIcons {
-//  100% {
-//    padding: $spacer * 1.5;
-//  }
-//
-//  0% {
-//    padding: $spacer * 1.4;
-//  }
-//}
+@keyframes pressedApp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

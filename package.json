@@ -37,7 +37,8 @@
     "start": "npx craco start",
     "build": "npx craco build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,scss,css,json}\""
   },
   "eslintConfig": {
     "extends": [

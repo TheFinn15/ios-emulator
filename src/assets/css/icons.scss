@@ -2,18 +2,18 @@
 
 .icon {
   &__battery {
-    @include mixins.build-icon('battery-75.svg');
+    @include mixins.build-icon("battery-75.svg");
   }
   &__wifi-off {
-    @include mixins.build-icon('wifi-off.svg');
+    @include mixins.build-icon("wifi-off.svg");
   }
   &__mobile-network-on {
-    @include mixins.build-icon('mobile-network-on.svg');
+    @include mixins.build-icon("mobile-network-on.svg");
   }
   &__camera {
-    @include mixins.build-icon('camera.svg');
+    @include mixins.build-icon("camera.svg");
   }
   &__torch-off {
-    @include mixins.build-icon('flashlight-off.svg');
+    @include mixins.build-icon("flashlight-off.svg");
   }
 }

@@ -1,9 +1,15 @@
-import '../../assets/css/home-screen.css';
-import {Bottom} from './bottom';
-import {AppID, BlurOption, HomeScreenType, IHomeContent, IHomeScreen} from '../../types';
-import {Content} from './content';
-import {BlurContainer} from './blur-container';
-import {useState} from 'react';
+import "../../assets/css/home-screen.css";
+import { Bottom } from "./bottom";
+import {
+  AppID,
+  BlurOption,
+  HomeScreenType,
+  IHomeContent,
+  IHomeScreen,
+} from "@/types";
+import { Content } from "./content";
+import { BlurContainer } from "./blur-container";
+import { useState } from "react";
 
 export const HomeScreen = () => {
   const content: IHomeScreen = {
@@ -19,76 +25,94 @@ export const HomeScreen = () => {
       },
       {
         id: AppID.Safari,
-      }
+      },
     ],
     mainContent: [
       {
         app: {
           id: AppID.Settings,
-          name: 'Settings',
+          name: "Settings",
           badge: 10,
-        }
+        },
       },
       {
         folder: {
-          title: 'shoto',
+          title: "shoto",
           badge: 91,
           apps: [
             {
               id: AppID.Calendar,
-              name: 'Calendar',
+              name: "Calendar",
             },
             {
               id: AppID.Files,
-              name: 'Files',
+              name: "Files",
             },
             {
               id: AppID.Clock,
-              name: 'Clock',
+              name: "Clock",
             },
             {
               id: AppID.AppStore,
-              name: 'App Store',
+              name: "App Store",
             },
-          ]
-        }
+          ],
+        },
       },
       {
         app: {
           id: AppID.Calculator,
-          name: 'Calculator',
-        }
+          name: "Calculator",
+        },
       },
       {
         app: {
           id: AppID.Contacts,
-          name: 'Contacts',
-        }
+          name: "Contacts",
+        },
       },
       {
         app: {
           id: AppID.Maps,
-          name: 'Maps',
-        }
+          name: "Maps",
+        },
       },
-    ]
+    ],
   };
 
   const [blurredBox, setBlurredBox] = useState<BlurOption | null>(null);
 
   return (
-      <div className="home-screen__container">
-        {blurredBox && <BlurContainer state={blurredBox.state} type={blurredBox.type} ctx={blurredBox.ctx} onCloseBlur={() => setBlurredBox(null)} onOpenApp={handleOpenContent}/>}
+    <div className="home-screen__container">
+      {blurredBox && (
+        <BlurContainer
+          state={blurredBox.state}
+          type={blurredBox.type}
+          isContextMenu={blurredBox.isContextMenu}
+          ctx={blurredBox.ctx}
+          onCloseBlur={() => setBlurredBox(null)}
+          onOpenApp={handleOpenContent}
+        />
+      )}
 
-        <Content apps={content.mainContent} onOpenApp={handleOpenContent} />
-        <Bottom apps={content.bottomApps} onOpenApp={handleOpenContent} />
-      </div>
+      <Content apps={content.mainContent} onOpenApp={handleOpenContent} />
+      <Bottom apps={content.bottomApps} onOpenApp={handleOpenContent} />
+    </div>
   );
 
-  function handleOpenContent(type: HomeScreenType, ctx: IHomeContent) {
+  function handleOpenContent(
+    type: HomeScreenType,
+    ctx: IHomeContent,
+    isCtxMenu?: boolean
+  ) {
     switch (type) {
-      case 'folder':
-        setBlurredBox({state: true, ctx, type});
+      case "folder": {
+        setBlurredBox({ state: true, ctx, type });
+        break;
+      }
+      case "application":
+        setBlurredBox({ state: true, ctx, type, isContextMenu: isCtxMenu });
+        break;
     }
   }
 };

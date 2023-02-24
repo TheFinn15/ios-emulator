@@ -1,3 +1,14 @@
+@keyframes pressedApp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
 .home-screen__container {
   position: relative;
   display: flex;
@@ -19,6 +30,10 @@
   align-items: center;
   width: 48px;
   height: 48px;
+}
+.home-screen__container-apps__item:active {
+  animation: pressedApp 0.4s ease-in;
+  animation-fill-mode: forwards;
 }
 .home-screen__container-apps__item img {
   justify-content: center;
@@ -46,6 +61,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.home-screen__container-apps__folder:active {
+  animation: pressedApp 0.4s ease-in;
+  animation-fill-mode: forwards;
 }
 .home-screen__container-apps__folder img {
   justify-content: center;
@@ -131,6 +150,10 @@
   width: 48px;
   height: 48px;
 }
+.home-screen__container-bottom__item:active {
+  animation: pressedApp 0.4s ease-in;
+  animation-fill-mode: forwards;
+}
 .home-screen__container-bottom__item img {
   justify-content: center;
   border-radius: 10px;
@@ -153,6 +176,14 @@
   transition: all 0.3s ease;
 }
 
+.blur-box-close {
+  animation: closeBlur 0.3s ease-in-out !important;
+}
+
+.blur-box-folder-close {
+  animation: closeApp 0.3s ease-in-out !important;
+}
+
 .blur-box {
   position: absolute;
   top: -32px;
@@ -162,6 +193,7 @@
   background-color: rgba(95, 95, 95, 0.55);
   backdrop-filter: blur(10px);
   z-index: 1;
+  animation: openBlur 0.3s ease-in-out;
   border-radius: 40px;
 }
 .blur-box__folder {
@@ -170,6 +202,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  animation: openApp 0.3s ease-in-out;
 }
 .blur-box__folder span {
   font-family: "SF PRO Regular", sans-serif;
@@ -187,6 +220,39 @@
   border-radius: 40px;
   padding: 2rem;
   width: 260px;
+}
+
+@keyframes closeBlur {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes closeApp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+@keyframes openApp {
+  0% {
+    transform: scale(0.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes openBlur {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=home-screen.css.map */

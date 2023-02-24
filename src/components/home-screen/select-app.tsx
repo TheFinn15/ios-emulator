@@ -1,10 +1,10 @@
-import {AppID} from '../../types';
+import { AppID } from "@/types";
 
 interface SelectAppProps {
-  id: AppID
+  id: AppID;
 }
 
-export default function SelectApp({id}: SelectAppProps) {
+export default function SelectApp({ id }: SelectAppProps) {
   switch (id) {
     case AppID.Settings:
   }

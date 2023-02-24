@@ -6,12 +6,14 @@
   font-family: "SF Pro Thin";
   src: url("../fonts/SFProDisplay-Thin.ttf");
 }
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
 @media (max-width: 576px) {
-  body, html {
+  body,
+  html {
     overflow: hidden;
   }
 }

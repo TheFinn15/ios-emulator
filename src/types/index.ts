@@ -5,42 +5,42 @@ export interface INotification {
   sentAt: Date;
 }
 
-export type ScreenType = 'lock-screen' | 'home' | 'settings';
+export type ScreenType = "lock-screen" | "home" | "settings";
 
-export type HomeScreenType = 'widget' | 'application' | 'folder';
+export type HomeScreenType = "widget" | "application" | "folder";
 
 export enum WidgetSize {
- Small = '2x2',
- Medium = '3x2',
- ExtraMedium = '4x2',
- Large = '4x4'
+  Small = "2x2",
+  Medium = "3x2",
+  ExtraMedium = "4x2",
+  Large = "4x4",
 }
 
 export enum AppID {
-  Settings = '1',
-  Camera = '2',
-  Messages = '3',
-  Photos = '4',
-  Phone = '5',
-  Contacts = '6',
-  AppStore = '7',
-  Clock = '8',
-  Locator = '9',
-  Calendar = '10',
-  Calculator = '11',
-  Mail = '12',
-  Safari = '13',
-  Wallet = '14',
-  Files = '15',
-  Weather = '16',
-  Notes = '17',
-  Maps = '18',
-  Music = '19',
-  Health = '20',
-  Translate = '21',
-  AppleTV = '22',
-  AppleStore = '23',
-  Books = '24'
+  Settings = "1",
+  Camera = "2",
+  Messages = "3",
+  Photos = "4",
+  Phone = "5",
+  Contacts = "6",
+  AppStore = "7",
+  Clock = "8",
+  Locator = "9",
+  Calendar = "10",
+  Calculator = "11",
+  Mail = "12",
+  Safari = "13",
+  Wallet = "14",
+  Files = "15",
+  Weather = "16",
+  Notes = "17",
+  Maps = "18",
+  Music = "19",
+  Health = "20",
+  Translate = "21",
+  AppleTV = "22",
+  AppleStore = "23",
+  Books = "24",
 }
 
 export interface DateTime {
@@ -81,11 +81,12 @@ export interface IHomeContent {
 
 export interface IHomeScreen {
   mainContent: IHomeContent[];
-  bottomApps: IHomeApp[]
+  bottomApps: IHomeApp[];
 }
 
 export interface BlurOption {
   state: boolean;
   type: HomeScreenType;
   ctx: IHomeContent;
+  isContextMenu?: boolean;
 }
